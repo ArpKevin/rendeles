@@ -174,14 +174,14 @@ if (isset($_GET['t']) && isset($_GET['m'])) switch ($_GET['t']) {
 
             print'
             <form method="POST">
-                <br>Kinek:<select name="menu_id">';
+                <br>Kinek:<select name="u_id">';
                 $Q = mysqli_query($DB,"SELECT id AS kulcs, u_name AS opcio FROM `t_users` ORDER BY u_name");
                 while ($sor = mysqli_fetch_array($Q)) {
                     opcio_kiir($sor);
                 }
                 print'</select>';
                 mysqli_free_result($Q);
-                print'<br>Minek:<select name="menu_id">';
+                print'<br>Minek:<select name="p_id">';
                 $Q = mysqli_query($DB,"SELECT id AS kulcs, p_name AS opcio FROM `t_products` ORDER BY p_name");
                 while ($sor = mysqli_fetch_array($Q)) {
                     opcio_kiir($sor);
